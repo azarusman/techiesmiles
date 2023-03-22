@@ -1,0 +1,58 @@
+Techie Smiles - 25032023
+
+WHERE:
+Select all employee whose sal is greater than 2000
+Select all employee with a sal less than 1500
+Select all employee who joined after January 1st, 1995
+Select all employees who work in the Sales department
+Select all employees who have commision
+
+LIKE:
+Select all employee whose name starts with 'B'
+Select all Job that contain the word 'MAN' in it
+Select all employees whose name ends with 'E'
+Select all employees whose name ends with 'TT'
+Select all employees whose name starts with 'Smi' and ends with 'th'
+Select all employees whose name start in [A-E]
+
+AND:
+Select all employee whose sal is between 500 and 1050
+Select all employee whose joining date is 1996-03-26 and commision is NOT NULL
+Select all employees who work in the Sales department and have a salary greater than 1800
+Select all employees who work in the Sales department and have a last name starting with 'D'
+
+IN:
+Select all employees whose salary is in 500, 2000, 1500.
+Select all employees who works as Salesman and Analyst.
+Select all employees whose job title is either 'Manager' or 'Clerk'.
+Select all employees who have commission as 0
+
+OR:
+
+Select all employees who live in either New York or California, or have a last name starting with 'S'
+
+BETWEEN:
+Select all Salary is between 4000 and 1000.
+
+
+IS NULL:
+Select all employees who have no manager.
+Select all employees who have no commision.
+Select all employees who have not been assigned a department.
+Select all employees who have not provided a joining date.
+
+CONCATENATION:
+Combine the ename and 'No last name' value for all employees into a single field called 'full_name'.
+Combine the ename, manager no, department by giving space between each field for all employees into a single field called 'Employee & Manager details'.
+Combine the ename, salary by giving space between field for all employees into a single field called 'Employee salary details'.
+
+
+ARITHMETIC OPERATORS:
+Add 10% to the salary field of all employees.
+Increase the salary of all employees by 1000 rupees.
+Calculate the yearly salary of each employee
+Calculate the Weekly salary of each employee
+Calculate the Daily wages of each employee.
+
+
+
