@@ -1,0 +1,76 @@
+What is a primary key in PostgreSQL, and why is it important?
+How do you define a foreign key in PostgreSQL, and what is its purpose?
+What is a composite key, and how is it different from a primary key?
+What is the difference between a unique key and a primary key in PostgreSQL?
+What is normalization, and why is it important in database design?
+What are the different normal forms, and how are they related to one another?
+How do you determine whether a table is in first normal form (1NF)?
+What is the difference between 1NF, 2NF, and 3NF?
+How do you denormalize a table, and why would you want to do so?
+What is a database management system (DBMS), and what are its key features?
+What is the difference between a relational database and a non-relational database?
+How do you select all columns from the employees table in PostgreSQL?
+How do you select a specific column from the employees table in PostgreSQL?
+How do you select distinct values from a specific column in the employees table?
+How do you filter rows in the employees table using the WHERE clause?
+How do you order the rows in the employees table by a specific column?
+
+
+Practical Questions
+
+******** Beginner *******************
+
+1. DAE WHOSE DEISGNATION IS MANAGER
+2. DAE WHOSE SAL IS GREATER THAN 10000
+3. DAE WHOSE SAL IS LESS THAN 5000
+4. DAE WHOSE SAL IS GREATER OR EQUAL TO THE EMPID SN07
+5. DAE WHOSE DESIG IS NOT LIKE MANAGER		
+6. FIND THE ANNUAL SAL OF EMPLOYEE
+7. SUBRACT 500 RUPEE FROM THE MONTH SALARY
+8. ADD ANNUAL SAL WITH 500 FOR EVERY EMPLOYEE
+9. FIND THE EMPLOYEE WHO ARE GETTING SAL IN ODD NUMBER
+10. FIND THE EMPLOYEE WHO ARE GETTING SAL IN EVEN NUMBER
+11. DISPLAY ALL THE EMPLOYEE SALARY WITH INCREASE OF 100 WHILE DISPLAYING DISPLAY IT AS NEW SALARY DETAILS
+12. DISPLAY ALL THE EMPLOYEE SAL AND THEIR ANNUAL SALARY WITH INCREASE OF BONUS RS 100. WHILE DISPLAYING DISPLAY IT AS BONUS DETAILS
+13. DISPLAY MAXIMUM SALARY
+14. DISPLAY MINIMUM SALARY
+15. DISPLAY THE TOTAL NO OF EMPLOYEES
+16. DISPLAY THE 3RD MAXIMUM SALARY
+17. FIND THE EMPLOYEE WHO MIN EXPERIENCE IN THE COMPANY
+18. DAE WHO IS WORKING IN RESEARCH DEPT USING 'IN' Operator
+19. DAE WHO IS WORKING IN RESEARCH AND MARKETING USING 'IN' Operator
+20. DAE WHO IS NOT WORKING IN CUSTOMER CARE
+21. GROUP ALL THE DEPT AND DISPLAY THE LEAST AND HIGHEST SAL
+22. GROUP ALL THE DEPTNO GET NO OF EMPS AVG, TOTAL, HIGH, AND LOW SAL. EXCEPT MANAGER AND HR AND SORT ALL DEPTNO IN ASC ORDER
+23. DISPLAY ALL THE EMPLOYEE WHOSE ENAME HAS EXACTLY 5 LETTER FROM MANAGEMENT AND SAL <4000
+24. DAE WHO JOB IS NOT LIKE HR AND CEO
+25. DAE WHOSE ENAME HAS 'A' AS 2nd LETTER USING SUBSTRING
+26. Get the 2nd max sal from each deptno in employee table USING correlated subqueries
+27. Find the total no of 'N' present in the first_name field from the employees tables
+28. Display the Current date
+29. Add 5 days from today's date
+30. Add 1 month from the current date
+31. Display Total no of days worked by each employee
+32. Display total no of months worked by each employee
+33. Display total no of Weeks worked by each employee
+34. Display the employee who joined first in the Organization
+35. Display the employee details who is getting the same salary using Count
+36. Display the total no of employees works under each manager
+37. Display the total no of employees works under each department
+38. Dispaly the employee whose name ends with 'N'
+39. Display the employee whose name has 'L' in it
+
+							****************Advanced***********
+
+40. Write a subquery to find employees and departments table to find the name of the employee, including first_name and last name, department ID and name of departments.
+41. Write a query to find the addresses (location_id, street_address, city, state_province, country_name) of all the departments.
+42. 
+Write a subquery by combining three tables employees, departments and locations to find the name, including first_name and last_name, jobs, department name and ID, of the employees working in London.
+43. Write aa subquery by combining two tables employees and departments to get the department name and number of employees working in each department. (Use Count here)
+44. Write a subquery to find the first_name, last_name, job_id and salary of the employees who draws a salary that is higher than the salary of all the Shipping Clerk (JOB_ID = 'SH_CLERK'). Sort the results on salary from the lowest to highest.
+45. Write a SQL Subquery to find the first_name, last_name and salary of the employees who earn more than the average salary and works in any of the IT departments.
+46. Write a SQL subquery to find the employee first_name, last_name and salary, whose salary is greater than the average salary of all employees.
+47. Write a SQL subquery to find the first_name and last_name of the employees who are working as a manager. (Use Correlated Subquery)
+48. Replace the value 342.22.222 to 122.XX.213
+49. Print all the employee name from Employee table in the mentioned format -- ALLEN --> ALLEN@GMAIL.COM
+50. Replace the Phone_number field details dynamically in the mentioned format -- Example: 515.123.4001 --> 515.123.xxxx
