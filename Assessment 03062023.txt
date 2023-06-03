@@ -1,0 +1,34 @@
+To fetch ALTERNATE records from a table. (Odd Numbered)
+To select ALTERNATE records from a table. (Even numbered)
+Find the 3rd MAX salary in the emp table.
+Find the 3rd MIN salary in the emp table.
+Select FIRST n records from a table (Note: Based on the user input, query has to pick the record from the table dynamically)
+Select LAST n records from a table (Note: Based on the user input, query has to pick the record from the table dynamically)
+List dept no., Dept name for all the departments in which there are no employees in the department.
+How to get 3 Max salaries ?
+How to get 3 Min salaries ?
+How to get nth max salaries ?
+Select DISTINCT RECORDS from emp table.
+How to delete duplicate rows in a table?
+Count of number of employees in department wise
+Suppose there is annual salary information provided by emp table. How to fetch monthly salary of
+each and every employee?
+Select all record from emp table where deptno =10 or 40
+Select all record from emp table where deptno=30 and sal>1500.
+Select all record from emp where job not in SALESMAN or CLERK.
+Select all record from emp where ename in 'BLAKE','SCOTT','KING'and'FORD'.
+Select all records where ename starts with ‘S’ and its lenth is 6 char.
+Select all records where ename may be any no of character but it should end with ‘R’
+Count MGR and their salary in emp table.
+In emp table add comm+sal as total sal
+Select any salary <3000 from emp table.
+Select all salary <3000 from emp table
+Select all the employee group by deptno and sal in descending order.
+How can I create an empty table emp1 with same structure as emp?
+How to retrive record where sal between 1000 to 2000?
+Select all records where dept no of both emp and dept table matches.
+If there are two tables emp1 and emp2, and both have common record. How can I fetch all the recods
+but common records only once?
+How to fetch only common records from two tables emp and emp1?
+How can I retrive all records of emp1 those should not present in emp2?
+Count the totalsa deptno wise where more than 2 employees exist.
