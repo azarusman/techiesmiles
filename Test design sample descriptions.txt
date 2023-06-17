@@ -1,0 +1,148 @@
+https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+
+To Verify whether the User is able to successfully create an Employee account by entering the Valid details in the 'Add User' page.
+
+To verify whether the User Account is successfully created under the 'Add User' Page by providing valid details for the below fields
+
+Field List:
+1. Username
+2. Employee Name
+3. Password
+4. Re-enter Password
+5. User Role - Admin/Ess
+6. Status - Disabled/Enabled
+
+To verify whether the User Account is successfully created under the 'Add User' Page by providing valid details for the below fields
+
+Field List:
+1. Username
+2. Employee Name
+3. Password
+4. Re-enter Password
+5. User Role - ESS/Admin
+6. Status - Enabled/Disabled
+
+To verify whether the User Account is successfully created under the 'Add User' Page by providing valid details for the below fields
+
+Field List:
+1. Username
+2. Employee Name
+3. Password
+4. Re-enter Password
+5. User Role - ESS
+6. Status - Disabled
+
+
+
+To verify whether the User Account is successfully created under the 'Add User' Page by providing valid details for the below fields
+
+Field List:
+1. Username
+2. Employee Name
+3. Password
+4. Re-enter Password
+5. User Role - Admin
+6. Status - Disabled
+
+
+To Verify whether the User Account is successfully created by entering User Role as 'Admin' and Status as 'Enabled' 
+and other fields with valid details in the Add User page
+
+
+To Verify whether the User Account is successfully created by entering User Role as 'Ess' and Status as 'Enabled' 
+and other fields with valid details in the Add User page
+
+
+To Verify whether the User Account is successfully created by entering User Role as 'Ess' and Status as 'Disabled'
+and other fields with valid details in the Add User page
+
+To Verify whether the User Account is successfully created by entering User Role as 'Admin' and Status as 'Disabled'
+and other fields with valid details in the Add User page.
+
+
+
+
+**********************
+
+To verify whether the user is displayed with all 5 options in the Job drop down list as mentioned below. 
+
+Drop Down list:
+1.
+2.
+3.
+4.
+5.
+
+
+
+To Verify whether the User is displayed with 'Job Titles' details by clicking on the 'Job titles' drop down list under the Job tab in Admin section. 
+
+Verify whether all job titles under the Job Titles page are displayed to the User by clicking on the Job Title drop down list.
+
+
+To Verify whether the User is displayed with 'Employee Status' details by clicking on the 'Employee status' drop down list under job tab in Admin section.
+
+
+
+To Verify whether the User is displayed with all 7 tabs in the leave section as mentioned below. 
+
+To Verify whether all 7 tabs under the Leave Section is displayed to ther User by clicking on the Leave section. 
+
+To Verify whether all 7 tabs are displayed to the user under the Leave section. 
+
+
+
+
+To Verify whether the user has No drop down list under the Nationalities and Corporate Branding tabs in the Admin Section. 
+
+To verify whether the User is displayed with Nationalities tab without any drop down list in the Admin section.
+
+to verify wehther the user is displayed with no drop down list by clicking on the nationalities tabs. 
+
+To Verify whether the user is displayed with the nationalities and Corporate branding without any drop down list. 
+
+To verify whether the user is displayed with No drop down list under Nationalities and Coroprate branding tabs. 
+
+To verify whether user is displayed with Nationalities tab without any drop down list in the Admin section.
+
+
+
+
+
+To Verify whether No Drop down list are displayed to the User while clicking on the Nationalities tab. 
+
+To verify whether No drop down list are available under the Nationalities tab. 
+
+To Verify whether No drop down list are available for both Nationalities and Coporate Branding tabs in the Admin section. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
