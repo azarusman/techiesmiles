@@ -1,0 +1,389 @@
+
+1. What is SQL?
+
+SQL stands for Structured Query Language. It is a programming language designed for managing and manipulating relational databases. 
+
+SQL provides a standardized way to interact with databases, allowing users to create, modify, and retrieve data. 
+
+2. What is Data?
+
+Data refers to information or statistics that are collected, recorded, or stored for analysis, reference, or use in various contexts. 
+
+It can be in the form of numbers, text, images, audio, video, or any other format that can be processed by computers. 
+
+3. What is Database?
+
+A collection of organized and structured data stored in a computer system.
+
+4. What is DBMS?
+
+DBMS stands for Database Management System. It is a software application or system that enables users to interact with databases, manage data, and perform various operations on the data.
+
+DBMS serves as an intermediary between the users and the database, providing a convenient and efficient way to store, retrieve, update, and manage data.
+
+5. What is RDBMS?
+
+RDBMS stands for Relational Database Management System. It is a type of DBMS that organizes and manages data based on the relational model.
+
+In an RDBMS, data is stored in tables consisting of rows (records) and columns (attributes). The relationships between tables are defined through keys and foreign keys, establishing connections and ensuring data integrity.
+
+6. What is a Table?
+
+A two-dimensional structure that holds data in rows (records) and columns (fields).
+
+7. What is a Column?
+
+A vertical component of a table that defines the type of data it can hold.
+
+8. What is a Row?
+
+A horizontal component of a table that represents a single record or data entry.
+
+9. What is Primary Key?
+
+A unique identifier for each row in a table, ensuring its uniqueness and integrity.
+
+10. What is a Foreign Key?
+
+A foreign key is a field or a set of fields in a database table that refers to the primary key of another table. It establishes a relationship between two tables by enforcing referential integrity.
+
+11. What is a join?
+This is a keyword used to query data from more tables based on the relationship between the fields of the
+tables. Keys play a major role when JOINs are used.
+
+12. What are the types of join and explain each?
+
+There are various types of join which can be used to retrieve data and it depends on the relationship between
+tables.
+Inner join:
+Inner join return rows when there is at least one match of rows between the tables.
+
+Right Join:
+Right join return rows which are common between the tables and all rows of Right hand side table. Simply, it returns all the rows from the right hand side table even though there are no matches in the left hand side table.
+
+Left Join:
+Left join return rows which are common between the tables and all rows of Left hand side table. Simply, it returns all the rows from Left hand side table even though there are no matches in the Right hand side table.
+
+Full Join:
+Full join return rows when there are matching rows in any one of the tables. This means, it returns all the rows from the left hand side table and all the rows from the right hand side table.
+
+13. What is normalization?
+Normalization is the process of minimizing redundancy and dependency by organizing fields and table of a database. The main aim of Normalization is to add, delete or modify field that can be made in a single table.
+
+14. What is Denormalization?
+
+DeNormalization is a technique used to access the data from higher to lower normal forms of database. It is also process of introducing redundancy into a table by incorporating data from the related tables.
+
+15. What are all the different normalizations?
+
+The normal forms can be divided into 5 forms, and they are explained below ­.
+
+First Normal Form (1NF):.
+This should remove all the duplicate columns from the table. Creation of tables for the related data and identification of unique columns.
+
+Second Normal Form (2NF):.
+Meeting all requirements of the first normal form. Placing the subsets of data in separate tables and Creation of relationships between the tables using primary keys.
+
+Third Normal Form (3NF):.
+This should meet all requirements of 2NF. Removing the columns which are not dependent on primary key constraints.
+
+16. What is a View?
+A view is a virtual table which consists of a subset of data contained in a table. Views are not virtually present, and it takes less space to store. View can have data of one or more tables combined, and it is depending on the relationship.
+
+Inserting/Updating/Deleting the data in a view table will directly impact the Main table. Because, whenever the view table is executed, actually the saved query is being executed.
+
+17. What is an Index?
+
+An index is performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and it will be faster to retrieve data.
+
+18. What are the types of Indexes?
+
+Unique Index.
+This indexing does not allow the field to have duplicate values if the column is unique indexed. Unique index can be applied automatically when primary key is defined.
+
+Clustered Index.
+This type of index reorders the physical order of the table and search based on the key values. Each table can have only one clustered index.
+
+NonClustered Index.
+NonClustered Index does not alter the physical order of the table and maintains logical order of data. Each table can have 999 nonclustered indexes.
+
+19. What is a relationship and what are they?
+
+Database Relationship is defined as the connection between the tables in a database. There are various data basing relationships, and they are as follows:.
+One to One Relationship.
+One to Many Relationship.
+Many to One Relationship.
+Self­Referencing Relationship.
+
+20. What is a query?
+A Database SQL query is a code written in order to get the information back from the database. Query can be designed in such a way that it matched with our expectation of the result set. Simply, a question to the Database.
+
+21. What is subquery?
+A subquery is a query within another query. The outer query is called as main query, and inner query is called subquery. SubQuery is always executed first, and the result of subquery is passed on to the main query.
+
+22. What is Datawarehouse?
+
+Datawarehouse is a central repository of data from multiple sources of information. Those data are consolidated, transformed and made available for the mining and online processing. Warehouse data have a subset of data called Data Marts.
+
+23. What is Self­Join?
+Self­join is set to be query used to compare to itself. This is used to compare values in a column with other values in the same column in the same table. ALIAS ES can be used for the same table comparison.
+
+24. What is Cross­Join?
+Cross join defines as Cartesian product where number of rows in the first table multiplied by number of rows in the second table. If suppose, WHERE clause is used in cross join then the query will work like an INNER JOIN.
+
+25. What is Online Transaction Processing (OLTP)?
+
+Online Transaction Processing or OLTP manages transaction based applications which can be used for data entry and easy retrieval processing of data. This processing makes like easier on simplicity and efficiency. It is faster, more accurate results and expenses with respect to OTLP.
+
+Example – Bank Transactions on a daily basis.
+
+26. What is CLAUSE?
+SQL clause is defined to limit the result set by providing condition to the query. This usually filters some rows from the whole set of records.
+
+Example – 
+Query that has WHERE condition
+Query that has HAVING condition.
+
+27. What is an ALIAS command?
+
+ALIAS name can be given to a table or column. This alias name can be referred in WHERE clause to identify the table or column.
+
+Example:
+Select st.StudentID, Ex.Result from student st, Exam as Ex where st.studentID = Ex. StudentID
+
+Here, st refers to alias name for student table and Ex refers to alias name for exam table
+
+28. What is the difference between TRUNCATE and DROP statements?
+
+TRUNCATE removes all the rows from the table, and it cannot be rolled back. DROP command removes a table from the database and operation cannot be rolled back.
+
+29.  What are aggregate functions?
+
+Aggregate functions are used to evaluate mathematical calculation and return single values. This can be calculated from the columns in a table.
+
+30. What is DataWareHouse?
+
+What is Data Warehouse?
+
+A centralized location where consolidated data from multiple locations (databases) are stored.
+DWH is maintained seperately from an Organization's database.
+End user access it whenever the information is needed. 
+
+Data Warehouse is a subject-oriented, integrated, Time variant, Non volatile collection of data which will help to support the management decission and analysis.
+
+Subject-Oriented -> Data are categorized and stored by business subject rather than the application.
+Integrated -> Data are collected from desparate source and stored.
+Time Variant -> Various time data are stored in the Data warehouse which will help to analyze the past and present data. 
+Non-Volatile -> Data in Data Warehouse cannot be deleted, but rarely changed. 
+
+31. Comparison of OLTP and OLAP
+
+OLTP (Relational Database)- Oline Transfer Protocol: OLAP (Analytical Data Warehouse)- Online Analytical protocol
+
+OLTP:
+
+*Contains current data
+*Usefull in processing the two dimensional data.
+*Based on Entity relationship model
+*Provides primitive and highly detailed data
+*Used for writing data into Databases
+*Database size ranges from 100 MB to 1 GB
+*Fast, provides high performance
+*Number of records accessed will be minimum
+
+OLAP:
+*Contains historical data (legacy data)
+*Useful in analyzing the Multi dimensional data in x,y,z
+*Based on the star, snowflake, fact constellation schema
+*Provides summarized and consolidated data
+*Used for reading data from the DWH
+*DWH sizes ranges from 100GB to 1TB
+*Highly flexible, but not fast
+*Number of records accessed in millions
+
+32. What is DataMart?
+
+Data Mart:
+
+Data Mart which deals with single/particular business item data. It is completly focused on one area.
+
+Department wise data will be stored in each Data Mart. 
+Implementation is easy. 
+Maintance is easy. 
+Fast and flexible
+Single data sources
+
+Types of Data Mart
+
+Dependent Data Mart:
+OLTP ---> DWH ---> Data Mart
+
+Data will be first extracted from the OLTP and then it is stored in the Data Warehouse. From DWH it will be stored into the Data Mart.
+
+Independent Data Mart:
+OLTP ---> Data Mart
+Data will be directly extracted and loaded into the Data Mart from OLTP Relational DB.
+
+Hybrid Data Mart:
+OLTP ---> Data Mart
+DWH  ---> Data Mart
+Data is feed from both OLTP and DWH
+
+33. What is Metadata?
+
+MetaData defines data about data.
+MetaData in DWH defines the source details like Flatfile, Relational DB.
+
+34. Types of DWH?
+
+Types of DWH - OLAP
+
+MOLAP(Multi-Dimensional OLAP) - is a form of OLAP that process and stores the data into a multi-dimensional database.
+Adv: Excellent performance, can handle complex analysis
+DisAdv: Can hanlde only limited data.
+
+ROLAP(Relational OLAP) - is a form of OLAP that performs dynamic multi-dimensional analysis of data stored in a relational database rather than in a Multi dimensional database.
+Adv: Large volume of data can be processed.
+DisAdv: Requires large disk sapce.
+
+HOLAP(Hybrid OLAP) - is a combinatin of both MOLAP and ROLAP. 
+Adv: We can drill through the mutli dimensional and relational data. 
+
+35. What are the OLAP Operations?
+
+Roll up:
+
+Roll up performs an aggreation on a data cube by either:
+
+1.climbing up a concept hierarchy for a dimension.
+2.Dimension reduction.
+
+Drill down:
+
+Drill down performs the reverse operation of Roll up
+
+1.Stepping down a concept hierarchy for a dimension.
+2.Introducing a new dimension.
+
+Slice:
+
+Slice operation provides a new cube from one particular dimension in a given cube.
+
+Dice:
+
+Dice operation provides a new sub-cube from two or more dimension in a given cube.
+
+Pivot:
+
+Pivot operation is also known as the rotation operation.
+
+It transposes the axes(changes the x,y,z sides) in order to present the data in a different view.
+
+36. What is Dimension table?
+
+The table that describes the dimensions involved are called Dimension tables.
+Dividing a DWH project into dimensions provides structured information for analysis & Reporting.
+
+A DIMENSION TABLE WILL HAVE A FACT TABLE. WITHOUT FACT TABLE, DIMENSION TABLE CANNOT BE ACCESSED.
+
+37. What is Fact & Measures?
+
+FACT & Measures:
+For every dimension we have associated Fact table. 
+Any actions that user required, like summing, average, manipulate can be done on Fact table.
+
+A fact is a measure that can be summed, averaged & manipulated.
+A fact table contains two kinds of data - a dimension key & Measure.
+Every Dimension table is linked to a fact table.
+
+Fact table contains
+
+Product(Dimension table) --> Product id (Dimension key)
+                         --> Number of units sold (Measure)
+
+Any activities that is performed with the Dimension table will be stored under Measure in Fact table. 
+
+38. What is a Schema?
+
+Schema
+
+A schema will give the logical description of the entire database.
+It gives details about the constraints placed on the tables, key values present & how the tables are interlinked. 
+views created, database objects
+
+39. What are the types of schema in DWH?
+
+Types of Schema
+
+Star Schema
+Each dimension in a star schema is represented with ONE-DIMENSION TABLE which contains a set of attributes.
+Fact table is at the center, which contain keys to every dimension table & attributes.
+
+Snow flake schema
+Dimension table in Snow Flake Schema is further normalized. (Split into additional tables).
+Dimension 1 table is further connected with Dimension 2 and 3 tables with unique ids. Refer the DWH word doc
+
+Galaxy or Fact constellation schema
+
+It is also known as Fact constellation schema, Which has more than ONE FACT TABLE IN IT.
+Dimensions which are shared with more than one FACT table is called as CONFORMED DIMENSIONS.
+
+40. What is Common Table Expression (CTE) ?
+
+Common Table Expression
+
+Common table expression is very useful to handle complex joins and subqueries.
+
+
+CTE is the temporary table which will help to handle the complex join and sub queries. We can perform insert, update, delete actions using CTE
+
+CTE is 2 types: Recursive CTE and Non Recursive CTE
+
+Syntax:
+
+With CTE (CTE_column) AS ( CTE Query definition From table)
+
+41. What is Where clause?
+
+The WHERE clause is a SQL statement used to filter data based on specified conditions in a query. It allows you to selectively retrieve rows from a table that meet specific criteria.
+
+42. What is From in SQL?
+
+In SQL, the FROM clause is used to specify the table or tables from which you want to retrieve data in a query. It identifies the source tables that will be used to fetch the desired information.
+
+43. What is Group by Clause?
+
+The GROUP BY clause in SQL is used to group rows from a table based on one or more columns.
+
+Group by clause group the data and returns one output for each one result set. Group by clause will eliminate the duplicates. 
+
+Group by clause is used to perform operations on the Aggregate funcation. 
+
+Note: 
+
+Fields which is mentioned in the SELECT statement, MUST present in the Group by clause.  Example (SELECT DEPT_ID,JOB, COUNT(*) FROM EMPLOYEE GROUP BY DEPT_ID, JOB)
+
+It is not mandatory to mentioend the fields in the SELECT Statement which is mentioned in the Group by Clause. Example: (SELECT DEPT_ID, COUNT(*) FROM EMPLOYEE GROUP BY DEPT_ID, JOB_ID)
+
+44. What is Having Clause?
+
+The HAVING clause is a SQL statement used to filter groups of data based on specified conditions in a query that includes the GROUP BY clause. It allows you to apply conditions to the result of grouped data.
+
+HAVING clause often involve aggregate functions such as SUM, COUNT, AVG, MAX, or MIN, which applies fileter on the grouped data.
+
+45. What is ORDER BY?
+
+The ORDER BY clause in SQL is used to sort the result set of a query based on one or more columns in ascending or descending order. It allows you to control the sequence in which the rows are displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
