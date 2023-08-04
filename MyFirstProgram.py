@@ -439,7 +439,7 @@ print(string.find('A')) #2
 
 string= 'EPAT Handbook!'
 print(string.find('Z')) #-1
-'''
+
 #9. replace(old, new) method
 #This method returns a copy of the string with all occurrences of old replace by new.
 string = '00 01 10 11'
@@ -462,51 +462,49 @@ print(string.index('P')) #1
 string = 'EPAT Handbook!'
 print(string.index('Z')) #ValueError: substring not found
 
-###### Write and practice till this ##########
-
-'''
 #12. capitalize() method
-This method returns a capitalized version of the string.
-string = 'python is amazing!'
+#This method returns a capitalized version of the string.
+string = 'notebook'
 print(string.capitalize())
 
 #13. count(character) method
-This method returns a count of an argument provided by character
+#This method returns a count of an argument provided by character
 string = 'EPAT Handbook'
 print(string.count('o'))
 
 #14. len() method
-Returns length or number of characters in given sequence (String).
+#Returns length or number of characters in given sequence (String).
 string = "Hello World"
+print(len(string))
 length_of_str=len(string) # Output:  11
 print(length_of_str)
 
-String Operators:
-- + : Concatenation Operator, used to join two strings together into one single entity
-- * : Repetition operator which repeats each element n times where n can be any integer value
-- In : In operator which helps us to find whether the string value is present or not.
-- Not In: NotIn operator which helps us to find the string value is present or not.
 
-+ Operator:
-Msg1 = "Today is 1st day of class"
+#String Operators:
+# + : Concatenation Operator, used to join two strings together into one single attribute.
+# * : Repetition operator which repeats each element 'n' times where n can be any integer value.
+# In : In operator which helps us to find whether the string value is present or not.
+# Not In: NotIn operator which helps us to find the string value is present or not.
+
+#+ Operator:
+Msg1 = "Today is 2nd day of class "
 #"We are learning Python"
-print (Msg1 + "We are learning Python")
+print (Msg1 + "We are learning Python") #
 
-* Operator:
+#* Operator:
 Sample_string = 'Python! '
 print(Sample_string)
 print(Sample_string * 3)
 
-In Operator:
+#In Operator:
 name="John Doe"
-print(name in 'My name is John Doe')
+string = 'My name is John Doe'
+print(name in 'My name is John Doe') #Output
+print(name in string) #
 
-Not In Operator:
-age =45
-print(age not in 'my name is john Deo and my age is {age}')
-
-s = 'Food'
-print(s Not in 'Hello world')
+#Not In Operator:
+age ='Python'
+print(age not in 'my name is john Deo')
 
 #Float
 
@@ -519,9 +517,9 @@ print(str1*2)
 str1 = 23.26
 print(str1 - 10)
 
-
 #Type() function
-The inbuilt type(argument) function is used to evaluate the data type and returns the class type of the argument passed as a parameter
+#The inbuilt type(argument) function is used to evaluate the data type and 
+# returns the class type of the argument passed as a parameter
 
 string = 'EPAT Handbook'
 print(type(string))
@@ -536,85 +534,99 @@ string = True
 print(type(string))
 
 string = False
-print(type(string))
+print(type(string)) #<class 'bool'>
 
 string = 'False'
-print(type(string))
+print(type(string)) #<class 'str'>
 
 #List
 string = [1,2,3]
-print(type(string))
+print(type(string)) #<class 'list'>
 
 #Dictionary
-string = {'name':'TechieSmiles'}
-print(type(string))
+string = {'name':'TechieSmiles','age':18}
+print(type(string))  #<class 'dict'>
 
 #Tuple
 string = (456,'Hello',True)
-print(type(string))
+print(type(string))  #<class 'tuple'>
 
 #Set
 string = {789,"Python",None} #Note: Sets cannot have duplicate values and they are unordered collection of elements
 string = {789,"Python", "Programming"}
-print(type(string))
+print(type(string)) #<class 'set'>
 
 #A list, dict, tuple, set are native data structures within Python.
 
 #Data type Conversion
-Converting data type from one to another type is called Data Type conversion. When we change the type of a
-variable from one to another, this is called typecasting.
+#Converting data type from one to another type is called Data Type conversion. When we change the type of a
+#variable from one to another, this is called typecasting.
 
-There can be two types of conversion possible: implicit termed as coercion, and explicit often referred to as casting.
+#What is Type casting?
+#Converting a data type from one to another datatype is called type casting.
+
+#There can be two types of conversion possible: implicit termed as coercion, and explicit often referred to as casting.
 
 #Implicit Conversion:
-In Implicit Conversions, there's no need for explicit casting as it happens automatically during assignment.
-
+#In Implicit Conversions, there's no need for explicit casting as it happens automatically during assignment.
 print(8 / 2)
-print(type(8 / 2)
+print(type(8 / 2))
 
 #Explicit Conversion:
-To perform an Explicit Conversion in python you can use various built-in functions like int(), float(), str(). Here's how they work
+#To perform an Explicit Conversion in python you can use various built-in functions like 
+#int(), float(), str(), bool(). Here's how they work
 
-string = 'This is the year ' + 2023
-print(string)
+string = 'This is the year '
+print(string + 2023)
 
 string = 'This is the year ' + str(2023)
+print(string)
 print(type(string))
 
 #String to Int Conversion
 string = '400'
 print(type(string))
-print(type(int(string)))
+print(int(string)) #
+print(type(int(string))) #
 
 #Int to String Conversion
 a = 10
 print(type(a))
-print(type(str(a)))
+print(str(a)) #
+print(type(str(a))) #
 
 #Int to Float conversion
 a =10
 print(type(a))
+print(float(a)) #
 print(type(float(a)))
-
+'''
 #String to Float conversion
-string = '400'
+string = 'TechieSmiles123'
 print(type(string))
+print(string)
 print(type(float(string)))
+#Error: 
+#ValueError: could not convert string to float: 'TechieSmiles123'
+#Using Float, we cannot convert a Alpha/Alphanumeric values in string to Float. But we can convert the Numbers in string to float value.
+print(string)
 
 #Boolean to Int conversion
 boolean_value=True
-print(type(int(boolean_value))
+print(type(boolean_value))
+print(boolean_value)
+print(type(int(boolean_value)))
 
 boolean_value=False
-print(type(int(boolean_value))
+print(type(boolean_value))
+print(type(int(boolean_value)))
 
 boolean_value=0
-print(type(bool(boolean_value))
+print(type(bool(boolean_value)))
 
 boolean_value=1
-print(type(bool(boolean_value))
+print(type(bool(boolean_value)))
 
-'''
 
 
 
