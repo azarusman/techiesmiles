@@ -246,7 +246,7 @@ print(cars)
 print(cars[:-3])
 print(cars)
 
-'''
+
 
 #Update an value on the list
 cars = [1,'a','b','c','Volvo',12.50]
@@ -261,7 +261,7 @@ cars[0:3] = ['vOLVO','vOLVO','Volvo'] #['vOLVO', 'vOLVO', 'Volvo', 'c', 'Volvo',
 print(cars)  
 
 
-
+'''
 
 '''
 #Stacks and Queue
@@ -319,64 +319,104 @@ print(queue)
 #Tuples are Ordered / Index based / Duplicate / Static*
 #Tuples allows duplicate. It allows all data types. 
 #Tuple syntax - ()
-cars = ('BMW','VOLVO','12','12.5',True)
 
+cars = ('BMW','VOLVO',12,12.5,True)
+
+#cars.pop()  #'tuple' object has no attribute 'pop'
 #Tuple Length
-print(len(cars))
+print(len(cars)) #5
 
 #Tuple Index
-print(cars.index('BMW'))
+print(cars.index('BMW')) #0
 
 #Tuple Count
-print(cars.count('TRUE'))
+print(cars.count('TRUE')) #0
+print(cars.count('Techiesmiles')) #0
+#print(cars.index('TechieSmiles')) #ValueError: tuple.index(x): x not in tuple
 
 #Updating a value in Tuple
 cars = ('bmw','volvo')
-Y=list(cars)
+print(type(cars)) #Tuple
+
+Y=list(cars) 
+print(type(Y)) #List
+
 Y[0] = 'BMW'
+
+Y.append('value1') #BMW, volvo, value1
+
+Y[1]=['Value2','Value3','Value4']
+print(Y)
+print(type(Y)) 
+
 cars=tuple(Y)
+print(type(cars)) #tuple #('BMW', ['Value2', 'Value3', 'Value4'], 'value1')
 print(cars)
+
+print(cars[1][1]) #Value3
+print(cars[0]) #BMW
+
+
+
 
 #SET
 #SET is Unordered / Unindexed.
 #SET will not allow any duplicate values. It is Mutable.
+#It will allow all data types.
 #Set Syntax {} or set() function
 
-cars = {'bmw', 'ford', 'Toyota', 'BMW', 'bmw'}
+cars = {'bmw', 'ford', 'Toyota', 'BMW', 'bmw',12,12.5,True}
+
+print(type(cars)) #<class 'set'>
 
 #SET Length
-print(len(cars))
+print(len(cars)) #7
 #print(cars.count('bmw'))
 
 #SET Add
 cars.add('TOYOTA')
-print(cars)
+print(cars) #{True, 'TOYOTA', 'BMW', 'bmw', 12, 12.5, 'Toyota', 'ford'}
 
 cars.add('bmw')
-print(cars)
+print(cars) #{True, 'TOYOTA', 'BMW', 'bmw', 12, 12.5, 'Toyota', 'ford'}
 
 #SET Remove
-cars.remove('bmw')
+cars.remove('bmw') #{True, 'TOYOTA', 'BMW', 12, 12.5, 'Toyota', 'ford'}
 print(cars)
 
-cars.remove('bmw')
-print(cars)
+#cars.remove('bmw')
+#print(cars) #KeyError: 'bmw'  - It will allow the program to proceed further. 
 
 #SET Discard
 cars.discard('bmw')
-print(cars)
+print(cars) #It will remove the value if present, otherwise it will by-pass the program to proceed with next step.
 
 #SET Delete
-del(cars)
+#del(cars)
+
+cars.pop()
+print(cars) #{True, 'ford', 12, 12.5, 'BMW', 'TOYOTA'} - Pop will remove the first value from the set
+print(cars.pop()) #True
+print(cars) #{12, 12.5, 'TOYOTA', 'ford', 'BMW'}
+
+#cars.pop(3)
+#print(cars) #TypeError: pop() takes no arguments (1 given) - Pop takes no argument in SET 
+
+#cars.insert(2,'volvo') 
+#print(cars) #'set' object has no attribute 'insert'
+
+cars.add('Volvo') #TypeError: add() takes exactly one argument (2 given)
+print(cars)
 
 #SET Pop, clear
-'''
+
+
 #Dictionary
 #Dictionary is Unordered / Key and Value pair. #{key:value}
 #A dictionary holds indexes with keys that are mapped to certain values. 
 #These key-value pairs offer a great way of organizing and storing data in Python. 
 #They are mutable, meaning you can change the stored information. 
-#A key value can be either a string, Boolean, or integer. Here’s an example dictionary illustrating this:
+#A key value can be either a string, Boolean, float or integer. Here’s an example dictionary illustrating this:
 
 #Example:  A dictionary is like a phone-book where we can find the phone numbers or contact details of a person by knowing only his/her name 
 #i.e. we associate names (keys) with corresponding details (values).
@@ -386,49 +426,64 @@ del(cars)
 #dictionary = {key1 : value1, key2 : value2, key3 : value3}
 
 #How to create a Dictionary
-#Option 1: dict = {name:value}
+#Option 1: dict = {Key:value}
 #Option 2: dict = (name:value)
-'''
+
 new_dict = {'brand':'Honda', 
             'model': 'Civic', 
             'year': 1995}
-print(new_dict)
+
+print(new_dict) #{'brand': 'Honda', 'model': 'Civic', 'year': 1995}
+print(type(new_dict)) #<class 'dict'>
 
 #Create Dict with multiple DataTypes
+
 ticker = {'symbol' : 'AAPL',
 'price' : 224.95,
 'company' : 'Apple Inc',
 'founded' : 1976,
-'products' : ['Machintosh', 'iPod',
-'iPhone', 'iPad']}
+'products' : ('Machintosh', 'iPod',
+'iPhone', 'iPad')}
 
-#How to get values from the dictionary based on the Keys
+print(type(ticker)) #<class 'dict'>
+
+#How to get values from the dictionary based on the Key
+
+print(ticker['company'])
+print(ticker['products'][1])
 
 print(ticker['products'][2]) #['iPad']
 print(ticker['company']) #'Apple Inc'
-print(ticker.get('company')) 'Apple Inc'
+#print(ticker.get('company')) 'Apple Inc'
 
-#How to add values in the list under Dictionary
-ticker['products']=['Iphnoe 14']
-ticker['products']='Iphone12'
-ticker['products'][1,'Iphone14']
+#How to add values in the list under Dictionary?
+
+#ticker['products']='Iphone12'
+#ticker['products'][1,'Iphone14'] #TypeError: string indices must be integers
+newvalue = 'Iphone12'
+ticker['products'].append[('Apple Watch')] # Check
 print(ticker)
-'''
-'''
+
+
 #What is Nested Dictionary?
 #We can also provide a dictionary as a value to another dictionary key. Such a dictionary is called nested dictionary. 
 #Take a look at below example:
 
-tickers = {'AAPL' : {'name' : 'Apple Inc.','price' : 224.95},
+tickers = {'AAPL' : {'name' : {'price':234},'price' : 224.95},
            'GOOG' : {'name' : 'Alphabet Inc.','price' : 1194.64}}
 
-print(tickers['AAPL']['name'])
+print(tickers) #{'AAPL': {'name': 'Apple Inc.', 'price': 224.95}, 'GOOG': {'name': 'Alphabet Inc.', 'price': 1194.64}}
+
+print(tickers['AAPL']) #
+print(tickers['AAPL']['name']['price']) #
+#tickers['AAPL']['Location':'America']
+print(tickers)
+
 
 #Assigning same name to multiple values in Dict
-demo = {'cars':'Jaguar', 'cars':'Jaguar'}
+demo = {'cars':'Jaguar', 'cars':'Jaguar2'}
 print(demo)
-
-#In the above example, Python discarded the value AAPL and retained the latest value assigned to the same key.
+#In the above example, Python discarded the value cars and retained the latest value assigned to the same key.
 
 #Altering Dictionaries
 #A value in a dictionary can be updated by assigning a new value to its corresponding key using the assignment operator =.
@@ -440,13 +495,8 @@ ticker = {'symbol' : 'AAPL',
 'products' : ['Machintosh', 'iPod',
 'iPhone', 'iPad']}
 
-ticker = {'symbol' : 'AAPL',
-'price' : 224.95,
-'company' : 'Apple Inc',
-'founded' : 1976,
-'products' : ['Machintosh', 'iPod',
-'iPhone', 'iPad']}
-
+ticker['products']= ['Iphone12']
+print(ticker)
 #How to add a new value in the dictinoary?
 ticker['products'].append('iphone14')
 print(ticker)
@@ -456,9 +506,12 @@ my_dict = {"key1": "value1", "key2": "value2"}
 new_key = "key3"
 new_value = "value3"
 my_dict[new_key] = new_value
-print(my_dict)
+print(my_dict)  #{'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
 
-#How to insert a new key value pari at a particular index position
+my_dict['key4'] = ['Value4']
+print(my_dict) # {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': ['Value4']}
+
+#How to insert a new key value pair at a particular index position
 #Dictionaries in most programming languages are inherently unordered collections, which means they don't have index positions like lists or arrays. 
 #Therefore, you can't directly insert a new key-value pair at a specific index position in a dictionary.
 #However, if you want to maintain a specific order for your key-value pairs, you can use an ordered data structure like a list of tuples or a special ordered dictionary
@@ -473,11 +526,57 @@ new_value = "value3"
 ordered_dict.insert(new_index, (new_key, new_value))
 print(ordered_dict)
 
+ordered_dict.insert(1,('new4', 'value5'))
+print(ordered_dict)
 
 a = {'Key1':'Value1','Key2':'Value2','Key3':'Value3'}
 print(a['Key1'])
 
+ticker = {'symbol' : 'AAPL',
+'price' : 224.95,
+'company' : 'Apple Inc',
+'founded' : 1976,
+'products' : ['Machintosh', 'iPod',
+'iPhone', 'iPad']}
+
+#Adding a new values
+ticker['products'].append(['Walkman','Airpod','Headset'])
+print(ticker)
+#{'symbol': 'AAPL', 'price': 224.95, 'company': 'Apple Inc', 'founded': 1976, 
+# 'products': ['Machintosh', 'iPod', 'iPhone', 'iPad', ['Walkman', 'Airpod', 'Headset']]}
+
+#Updating an existing value
+ticker['products']=['Walkman','Headsets','Airpod']
+print(ticker)
+#{'symbol': 'AAPL', 'price': 224.95, 'company': 'Apple Inc', 'founded': 1976, 'products': ['Walkman', 'Headsets', 'Airpod']}
 '''
 
+ticker = {'Key1':'Value1', 'Key2': 'Value2'}
+#Dictionary Items
+#items() : This method returns a object containing all times in the calling object.
+print(ticker.items())
+#dict_items([('symbol', 'AAPL'), ('price', 224.95), ('company', 'Apple Inc'), ('founded', 1976), ('products', ['Walkman', 'Headsets', 'Airpod'])]) 
 
+#Dictionary Keys
+#keys() : This method returns all keys in the calling dictionary
+print(ticker.keys())
+# dict_keys(['symbol', 'price', 'company', 'founded', 'products'])
+
+#Dictionary Values
+#values() : This method returns all values in the calling object.
+print(ticker.values())
+#dict_values(['AAPL', 224.95, 'Apple Inc', 1976, ['Walkman', 'Headsets', 'Airpod']])
+
+#Copying values from a Dictionary to new dictionary
+#As the name suggests, this method copies the calling dictionary to another dictionary.
+newticker = ticker.copy()
+print(newticker)
+
+#pop
+#This method pops the item whose key is given as an argument.
+print(newticker.pop('Key1')) 
+#TypeError: pop expected at least 1 arguments, got 0 - In Dictionary, we have to pass the key detail, otherwise it will throw error.
+print(newticker)
+
+#In pop - Key details should be passed as a input argument, value should not be considered
 
