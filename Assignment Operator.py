@@ -193,42 +193,43 @@ if (Tam & Eng & Mat & Sci & Soc >=35) and (Ave_mark>=Average):
     print('Pass')
 else:
     print("Fail")
-
 '''
-
 #Program 7
 #Reading the content from a file 
 
 filepath='C:\\Users\\Elait141\\Desktop\\Techie Smiles\\Python\\Files\\Python File.txt'
 
 # / = Forward slash -- In all programming language, it is suggested to give forward slash to avoid confusion. 
+#how to read specific line from a file?
 
 try:
     with open(filepath,'r') as f:
-        line = f.read()
+        line = f.readlines()
 
         if line:
             print("Below are the contents:")
-            print(f'Number of lines present {len(line)}')
-            print(line)
+            for i in range(1):
+                print(f"{i} : {line[i]} ")
+            #print(f'Number of lines present {len(line)}')
         else:
             print("File is empty!")
 
 except FileNotFoundError:
     print("File is not present")
-
 '''
 #Program 8
 #Writing the content to a new file 
 
-filepath='C:/Users/Elait141/Desktop/Techie Smiles/Python/Files/PythonFile1.txt'
+filepath= 'C:/Users/Elait141/Desktop/Techie Smiles/Python/Files/Python File.txt'
 
 try:
-    with open(filepath,'w') as f:
-        f.write("Hello Team, Good Morning")
-        f.write("\nIt is a new file")
-except ConnectionError:
+    with open(filepath,'r') as f:
+        line = f.read()
+        print(line)
+
+except ConnectionError: 
     print("Connectivity Error")
+
 
 #Program 9
 #Appending new data into the existing file 
@@ -244,9 +245,8 @@ except FileNotFoundError:
     print('File not found')
 
 
-
 filepath='C:/Users/Elait141/Desktop/Techie Smiles/Python/Files/Python File.txt'
-value = 'Helloworld'
+value = '3rd'
 try:
     with open(filepath,'r') as f:
         found = False
