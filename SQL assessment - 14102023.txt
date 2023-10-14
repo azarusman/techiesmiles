@@ -1,0 +1,67 @@
+
+1. Display all the records which has more than 12 characters in the field 'Name'. 
+
+2. Display the first 5 lines from the employee table
+
+3. Display the 6 - 8 records without using windows function
+
+4. Display all the employees whose designation ends with 'MAN' using substring. Note: it can be achieved using length
+
+5. Display the last 5 records in the employee table
+
+6. Display the employees whose salary is greater than the average salary of all employees in deptno 10.
+
+7. Display the '1234-4567-8920' as '1234-xxxx-8920' without replace function. 
+
+8. Display the number of working days of each employee from employee table.
+
+9. Display the count of records emp and employee table in the below format using views
+
+Table_Name | Count of records
+
+Emp	|  13
+Employee | 40
+Dept	| 15
+
+
+10. Display the unmatched records from Table A and B.
+
+11. Write the order of execution of the below query.
+SELECT film_id, title, release_year FROM film ORDER BY film_id LIMIT 4 OFFSET 3;
+
+12. Do the following and provide all SQL steps.
+Use Employees table. Use CASE statement
+i) All the employee who gets their salary less than 4000,  display their position as New Joinee
+ii) All the employee who gets their salary between 4001 and 10000, display their position as Jr_employee
+iii) All the employee who gets their salary greater than 10000,  display their position as Sr_employee.
+Display the Output as below.
+employee_id, first_name,last_name, salary, position
+
+
+13. Use employees, deptartments table. Provide sql for all steps.
+Use subquery to join the employees and deptartments table. If the department matched with departments table then list the records.
+
+14. Copy the table structure only and save as 'Employee_1' from Employee without using create statement.
+
+15. Display the 2nd max sal employee details from each department. 
+
+16. Display the even records from the employees table. 
+
+17. Write a SQL Subquery to find the first_name, last_name and salary of the employees who earn more than the average salary and works in any of the IT departments.
+
+18. Write a subquery to find the first_name, last_name, job_id and salary of the employees who draws a salary that is higher than the salary of all the Shipping Clerk (JOB_ID = 'SH_CLERK'). Sort the results on salary from the lowest to highest.
+
+19. Display all the employee details from each department except the 1st maximum salaried employee in each department. 
+
+20. Replace the last 2 characters of all employees name with 'X' - Example 'Allen'  --> 'AllXX'
+
+21. Display all the manager details from employees table. 
+
+22. Write a query to make a join with two tables employees and departments to get the department name and number of employees working in each department
+
+23. Write a query to make a join with two tables employees and departments to display department name, first_name and last_name, hire date and salary for all the managers who achieved a working experience is more than 15 years.
+
+24. Create a table using all data types 
+
+25. Display all the employee whose first_name has consicutive 2 letters. for example 'aa'
+
