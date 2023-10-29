@@ -127,6 +127,23 @@ print(s[-2:-1])
 # # To rename multiple column
 # print(pf.rename(columns={'Sales':'Sales_List', 'Order ID':'Order_ID'}))
 
+# How to set the data display
+
+# pd.set_option('Display_max_column', None)
+# print(pf.head(2))
+
+# pd.set_option('Display_max_column',7)
+# print(pf.head(3))
+
+# pd.set_option('Display_max_column', 3)
+# print(pf.head(1))
+
+# pf = pd.read_excel('Power BI Dataset.xlsx')
+# pd.set_option('display.max_columns', 5)
+# print(pf.iloc[:,:5].head(2))
+# print(pf.iloc[1:5,:5])
+# print(pf.iloc[:,3:5])
+
 # # Selecting a single column
 # df=pf['Sales']
 # print(df)
@@ -217,6 +234,9 @@ print(s[-2:-1])
 # # Filter a Particular Customer details
 # df = pf[(pf['Customer Name'] =='Adam Harte')]
 # print(df)
+
+# df = pf[(pf['Customer Name']).isin(['Adam Harte','Joel Mckean'])]
+# print(df[['Order ID','Order Date','Customer Name']])
 
 # # Filter a Multiple Customer details (OR Condition |)
 # df = pf[(pf['Customer Name'] =='Adam Harte') | (pf['Customer Name']=='Joel McKean')]
@@ -419,10 +439,42 @@ print(s[-2:-1])
 
 # # nlargest, nsmallest
 
+# Display the 2nd max salary
 # df = pf.nlargest(2,'Sal')
 # print(df)
+
+# Display the 2nd Minimum Salary
 
 # df = pf.nsmallest(2,'Sal')
 # print(df)
 
+# Display the 2nd smallest profit in the Country Itally
+# ef = pf[(pf['Country']=='Italy')]
+# df = ef['Profit'].nsmallest(2).iloc[-1]
+# af = ef[ef['Profit']==df]
+# print(af)
+
+# Display the 10th larget profit in the country Itally
+
+# ef = pf[(pf['Country']=='Italy')]
+# df = ef['Profit'].nlargest(10).iloc[-1]
+# af = ef[ef['Profit']==df]
+# print(af)
+
+
+# print(pf.iloc[:2])
+
+# print(pf['Profit'].sum())  #626967
+# print(pf['Profit'].max()) #3460
+# print(pf['Profit'].min()) #1
+# print(pf['Profit'].mean()) #152.36136087484812
+# print(pf['Profit'].median())
+# print(pf['Profit'].nlargest(10))
+# print(pf['Profit'].nsmallest(10))
+# print(pf['Profit'].idxmax()) #3460
+# print(pf['Profit'].idxmin()) #1
+# print(pf.isnull())
+# print(pf['Emp_id'].is_unique)
+# print(pf['Sal'].add(100)) 
+# print(pf['Sal'].duplicated())
 
