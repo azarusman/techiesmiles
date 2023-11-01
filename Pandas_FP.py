@@ -79,14 +79,14 @@ print(s[-2:-1])
 # s1 = pd.Series(a)
 # print(s+s1)
 
-# # Pandas DataFrame
+# Pandas DataFrame
 
-# #Pandas DataFrame is a heterogeneous two-dimensional object.
-# #The data are of the same type within each column but it could be a different data type for each column 
-# #and are implicitly or explicitly labeled with an index
+# Pandas DataFrame is a heterogeneous two-dimensional object.
+# The data are of the same type within each column but it could be a different data type for each column 
+# and are implicitly or explicitly labeled with an index
 
-# #s = pd.DataFrame()
-# #print(s)
+# s = pd.DataFrame()
+# print(s)
 
 # #Output
 # #Empty DataFrame
@@ -350,7 +350,7 @@ print(s[-2:-1])
 # ef=df['Profit'].sum()
 # print(ef)
 
-# #Average
+# Average
 # df = pf[(pf['Profit']) & (pf['City']=='Pantin')]
 # ef=df['Profit'].mean()
 # print(ef)
@@ -461,16 +461,15 @@ print(s[-2:-1])
 # af = ef[ef['Profit']==df]
 # print(af)
 
-
 # print(pf.iloc[:2])
-
 # print(pf['Profit'].sum())  #626967
 # print(pf['Profit'].max()) #3460
 # print(pf['Profit'].min()) #1
 # print(pf['Profit'].mean()) #152.36136087484812
 # print(pf['Profit'].median())
 # print(pf['Profit'].nlargest(10))
-# print(pf['Profit'].nsmallest(10))
+# print(pf['Sal'].nsmallest(2))
+# print(pf.nsmallest(2,'Sal'))
 # print(pf['Profit'].idxmax()) #3460
 # print(pf['Profit'].idxmin()) #1
 # print(pf.isnull())
@@ -478,3 +477,170 @@ print(s[-2:-1])
 # print(pf['Sal'].add(100)) 
 # print(pf['Sal'].duplicated())
 
+# How to print Null values under the field 'LastName'
+# ef = pf['LastName']
+# print(ef.isnull())
+# print(pf[ef.isnull()])
+
+# Display all the records of Not null 
+# ef = pf['LastName'].notnull()
+# print(pf[ef])
+
+# Display the records where LastName isNull() and FirstName isnotnull()
+# print(pf[(pf['LastName'].isnull()) & (pf['FirstName'].notnull())])
+
+# What is ISNULL, ISNA
+# pf['LastName']=pf['LastName'].apply(lambda x: x if x is not None else float('Nan'))
+
+# print(pf[pf['LastName'].isnull()])
+# print(pf.isna())
+# print(pf.fillna('XYZ'))
+
+# Grouping Function in Pandas
+
+# Display the total no. of employees working in each department. 
+
+data = {
+    'empid': [101, 102, 103, 104, 105, 106, 107, 108, 109],
+    'firstname': ['John', 'Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hannah'],
+    'lastname': [None, 'Johnson', 'Williams', 'Brown', 'Davis', 'Lee', 'Wilson', 'Allen', 'Adams'],
+    'sal': [None, 45000, 75000, None, 75000, 68000, 43000, 59000, 58000],
+    'deptno': [None, 2, 1, 3, 1, 3, 1, 1, 3],
+    'manager': [None, 101, None, None, 102, 103, np.nan, 101, 102],
+    'hiredate': [None, '2022-03-10', '2022-02-20', '2022-04-05', '2022-03-01', '2022-05-12', '2022-01-20', '2022-02-15', '2022-03-25'],
+    'technology': [None, 'Java', 'SQL', 'JavaScript', 'Python', 'Java', 'SQL', 'C++', 'Python'],
+    'location': [None, None , 'New York', 'Los Angeles', 'San Francisco', 'Los Angeles', 'New York', 'San Francisco', 'Los Angeles'],
+    'age': [33,36,26,24,23,'20',np.nan,None,0], 
+    'date': ['2020-12-01 08-PM','2014-02-25 11-AM','2018-06-28 09-AM','2003-10-22 02-PM','2004-09-19 05-PM','2001-06-01 08-PM',
+             '2023-03-29 12-PM','2010-12-25 10-PM','2010-12-25 10-PM']
+}
+
+df = pd.DataFrame(data)
+pd.set_option('Display.max_column',None)
+pd.set_option('Display.max_row', 20)
+
+grouped_data = df.groupby(['deptno'])
+pf = grouped_data['empid'].count()
+print(pf)
+
+# Display the no of employees working in each deptno with location
+ef = df.groupby(['deptno','location'])
+print(ef[['location']].count())
+
+# Display the total salary for each deparment
+grouped_data = df.groupby(['deptno'])
+pf = grouped_data['sal'].sum()
+print(pf)
+
+# Dispaly the Dept whose total no of employees are greater than 3
+grouped_data = df.groupby(['deptno'])
+pf = grouped_data['empid'].count()>3
+print(pf)
+
+# Another method
+grouped_data = df.groupby('deptno')
+pf = grouped_data['empid'].count()
+ef = pf[pf > 3]
+print(ef)
+
+# Display total sal of employees whose location is Newyork
+
+grouped_data = df.groupby('location')
+pf = grouped_data['sal'].sum()
+print(pf)
+
+# Display the total sal whose technology is SQL and location is New York
+grouped_data = df.groupby(['location', 'technology'])
+pf = grouped_data['sal'].sum()
+ef = pf.loc['New York','SQL']
+print(ef)
+
+# Display total sal under the Location New York
+grouped_data = df.groupby(['location', 'technology'])
+pf = grouped_data['sal'].sum()
+ef = pf.loc['New York']
+print(ef)
+
+# Display total sal under the Location San Fransico and New York
+grouped_data = df.groupby(['location', 'technology'])
+pf = grouped_data['sal'].sum()
+ef = pf.loc[['San Francisco','New York']]
+print(ef)
+
+# Display the duplicate sal in each dept
+grouped_data = df.groupby(['deptno', 'sal'])
+ef = grouped_data['deptno']
+print(ef.count()>=2)
+
+grouped_data = df.groupby(['deptno', 'sal'])
+ef = grouped_data['deptno'].count()
+print(ef[ef>=2])
+
+# Data Cleansing and handling missing values
+# How to drop the null values in data frame
+pf = df.dropna()
+print(pf)
+
+#Note: How to make the changes permanently
+pf = df.dropna(inplace=True)
+print(pf)  # None (check)
+
+# Replacing an empty value to a user-defined value
+pf = df.fillna('XYZ', inplace=True)
+print(pf)
+
+pf = df['location'].fillna('XYZ', inplace=True)
+print(pf)
+
+ef = df.dropna(axis='index', how='all')
+print(ef)
+
+ef = df.dropna(axis='index', how='any')
+print(ef)
+
+ef = df.dropna(axis='columns', how='all')
+print(ef)
+
+ef = df.dropna(axis='index', how='any', subset=['manager'])
+print(ef)
+
+ef = df.dropna(axis='index', how='all', subset=['sal','manager'])
+print(ef)
+
+# Replacing values to a specific column
+
+df['firstname'] = df['firstname'].replace('John','John S')
+print(df.head(1))
+
+df['firstname'] = df['firstname'].replace({'John':'John S', 'Alice':'Alice A'})
+print(df.head(3))
+
+df['firstname'] = df['firstname'].replace(['John','Alice'],'John S')
+print(df.head(2))
+
+df[['firstname','lastname']] = df[['firstname','lastname']].replace({'John':'John S', 'Alice':'Alice A', 'Smith':'Smith S','Davis':'Davis D'})
+print(df.head(5))
+
+replaced_values = {'John':'John S', 'William':'Alice A', 'Smith':'Smith S','Davis':'Davis D'}
+df[['firstname','lastname']] = df[['firstname','lastname']].replace(replaced_values)
+print(df)
+
+# Type Casting
+
+# How to find the datatypes of each column
+print(df.dtypes)
+
+# How to change a field data type from Str to Int or float
+print(df.dtypes)
+df['age'] = df['age'].astype(float)
+print(df.dtypes)
+
+# DateTime Series
+# How to find out the day or week or month from a date field
+df['date']= pd.to_datetime(df['date'], format='%Y-%m-%d %I-%p')
+
+print(df.loc[0,'date'].day_name())
+print(df.loc[0,'date'].date())
+print(df.loc[0,'date'].day_of_week)
+print(df.loc[0,'date'].day_of_year)
+print(df.loc[0,'date'].month_name())
