@@ -497,8 +497,7 @@ print(s[-2:-1])
 # print(pf.fillna('XYZ'))
 
 # Grouping Function in Pandas
-
-# Display the total no. of employees working in each department. 
+# Display the total no. of employees working in each department
 
 data = {
     'empid': [101, 102, 103, 104, 105, 106, 107, 108, 109],
@@ -626,7 +625,6 @@ df[['firstname','lastname']] = df[['firstname','lastname']].replace(replaced_val
 print(df)
 
 # Type Casting
-
 # How to find the datatypes of each column
 print(df.dtypes)
 
@@ -644,3 +642,55 @@ print(df.loc[0,'date'].date())
 print(df.loc[0,'date'].day_of_week)
 print(df.loc[0,'date'].day_of_year)
 print(df.loc[0,'date'].month_name())
+
+# To display all the date into dayname
+af = df['date'].dt.day_name()
+print(af)
+
+# To display the min date in the field
+af = df['date'].min()
+print(af)
+
+# To display the max date in the field
+af = df['date'].max()
+print(af)
+
+# To dispaly the no of employees joined between '2014-02-25' and '2020-12-01'
+af = df['date'].between('2014-02-25','2020-12-01')
+print(df[af])
+
+# Display the employees who joined after 2015-12-31
+df['hiredate']= pd.to_datetime(df['hiredate'], format='%Y-%m-%d')
+print(df[df['hiredate']>='2015-12-31'])
+
+#Method 2
+ef = df['hiredate']>='2015-12-31'
+print(df.loc[ef])
+
+# Display the employees who joined after '2015-12-31' and '2020-12-31'
+ef = ((df['hiredate']>='2015-12-31') & (df['hiredate']<='2020-12-31'))
+print(df.loc[ef])
+
+# Display the highest salary which is given for a employee whose hiredate is between '2020-01-01' and '2023-12-31'
+df['hiredate'] = pd.to_datetime(df['hiredate'], format= '%Y-%m-%d')
+ef = (df['hiredate']>='2020-01-01') & (df['hiredate']<='2023-12-31')
+print(df[ef][['hiredate','sal']].max())
+
+# Method 2
+df['hiredate']= pd.to_datetime(df['hiredate'], format='%Y-%m-%d')
+df.set_index('hiredate', inplace=True)
+df.sort_index(inplace=True)
+
+print(df['2020':'2022'])
+print(df['2020':'2022']['sal'].sum())
+print(df['2020':'2022']['sal'].max())
+print(df['2020':'2022']['sal'].min())
+print(df['2020':'2022']['sal'].count())
+
+# Reading JSON files
+df.to_json('json_data',orient='columns')
+
+json_read = pd.read_json('json_data',orient='columns')
+ef = json_read
+pf = ef['hiredate']>'2020-01-01'
+print(ef[pf])
